@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create(name: "Colton", email: "colton@gmail.com", password: "hellocats")
+User.create(name: "Matthew", email: "matthew@gmail.com", password: "hikitty")
+User.create(name: "Kathy", email: "kathy@gmail.com", password: "iheartdogs")
+
+Industry.create(description: "technology")
+Industry.create(description: "finance")
+Industry.create(description: "apparel")
+
+Company.create(name:"Apple", industry_id: 1)
+Company.create(name:"Google", industry_id: 1)
+Company.create(name:"JP Morgan", industry_id: 2)
+Company.create(name:"Topman", industry_id: 3)
+
+
+Job.create(title: "Engineer", city: "Cupertino", state: "CA", description:"Ruby engineer", company_id: 1)
+Job.create(title: "Marketer", city: "San Francisco", state: "CA", description:"Marketing analytics", company_id: 2)
+Job.create(title: "Recruiter", city: "Mountain View", state:"CA", description: "Hire the best and brightest talend at Google!", company_id: 2)
+Job.create(title: "Banker", city: "New York City", state: "NY", description: "Come make money out of money!", company_id: 3)
+Job.create(title: "Merchandise Planner", city: "Brooklyn", state: "NY", description: "Help find us the cutest clothes", company_id: 4)
+Job.create(title: "Sales Associate", city: "Easthampton", state: "NY", description: "Sell cute clothes", company_id: 4)
