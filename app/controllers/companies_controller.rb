@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
     respond_to do |f|
       f.html { render :show }
-      j.json { render json: @company }
+      f.json { render json: @company }
     end
   end
 
