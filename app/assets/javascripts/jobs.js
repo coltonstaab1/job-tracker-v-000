@@ -1,1 +1,3 @@
-jobs.js
+$document.ready(function() {
+  alert('document loaded!');
+});
