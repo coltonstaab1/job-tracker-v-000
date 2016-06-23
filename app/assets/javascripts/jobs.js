@@ -1,11 +1,14 @@
 $(document).ready(function() {
-  alert('document loaded!')
-  var data = getJobsData();
-  alert(data);
-  console.log(data);
-  $("div").append(data);
+  alert('document loaded!');
+  getJobsData();
 });
 
 function getJobsData() {
-  return $.ajax({url: 'http://localhost:300/jobs.json', dataType : "jsonp"});
-}
+  $.ajax({
+    url: 'http://localhost:3000/jobs.json',
+    type: 'GET',
+  }).done(function(data)
+    console.log("Hello");
+  );
+};
+
