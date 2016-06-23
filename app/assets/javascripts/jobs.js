@@ -1,3 +1,7 @@
-$document.ready(function() {
-  alert('document loaded!');
+$(document).ready(function() {
+  alert('document loaded!')
 });
+
+function getJobsData() {
+  
+}
