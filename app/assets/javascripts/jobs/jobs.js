@@ -1,21 +1,14 @@
 $(document).ready(function() {
- // var data = getJobsData();
   $.ajax({
     url: 'http://localhost:3000/jobs.json',
     type: 'GET'
   }).done(function(jobs){
     addDataToRow(jobs);
   });
+
+  submitForm();
 });
 
-/*
-function getJobsData() {
-    $.get("http://localhost:3000/jobs.json", function(data) {
-      debugger;
-      return data;
-  });
-}
-*/
 var addDataToRow = function(data) {
   for (var i = 0; i < data.length; i++) {
     var job = data[i];
@@ -40,4 +33,13 @@ var addDataToRow = function(data) {
         '</tr>'
       ].join(''));
   }
+}
+
+var submitForm = function() {
+  $('form').on('submit', function(event) {
+    debugger;
+    var title = $("#title").val();
+    console.log(title);
+    event.preventDefault();
+  })
 }
