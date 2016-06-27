@@ -38,6 +38,9 @@ var addDataToRow = function(data) {
 
 var submitForm = function() {
   $('form').on('submit', function(event) {
+    debugger;
+    var title = $("#title").val();
+    console.log(title);
     event.preventDefault();
   })
 }
