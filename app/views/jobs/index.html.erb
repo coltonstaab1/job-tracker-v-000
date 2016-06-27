@@ -1,5 +1,6 @@
 <%= javascript_include_tag 'jobs' %>
 index.html.erb
+<h3>Currently available jobs:</h3>
 <table id="jobsTable">
   <tr>
     <th>Title</th>
@@ -7,4 +8,17 @@ index.html.erb
     <th>State</th>
     <th>Description</th>
   </tr>
-</table>
+</table><br>
+
+<h3>Add new job listing:</h3>
+<form>
+  <label for="title">Title:</label><br>
+  <input type="text" name="title"><br>
+  <label for="city">City:</label><br>
+  <input type="text" name="city"><br>
+  <label for ="state">State:</label><br>
+  <input type="text" name="state"><br>
+  <label for="description">Description:</label><br>
+  <input type="textarea" name="description"><br>
+  <input type="submit" value="Submit">
+</form>
