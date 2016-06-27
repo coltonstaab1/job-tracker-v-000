@@ -17,4 +17,14 @@ class JobsController < ApplicationController
     end
   end
 
+  def create
+    @job = Job.create(job_params)
+    render json: @job, status: 201
+  end
+
+  private
+    def job_params
+      params.require(:job).permit(:title, :city, :state, :description)
+    end
+
 end

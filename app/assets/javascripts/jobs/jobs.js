@@ -39,10 +39,29 @@ var submitForm = function() {
   $('form').on('submit', function(event) {
     event.preventDefault();
     var values = $(this).serialize();
-    debugger;
     var posting = $.post('/jobs', values);
     posting.done(function(data) {
-      alert("Posting complete!")
+      $('#jobsTable').append([
+        '<tr>',
+          '<td>',
+            '<a href="jobs/',
+              data.id,
+            '">',
+            data.title,
+            '</a>',
+          '</td>',
+          '<td>',
+            data.city,
+          '</td>',
+          '<td>',
+            data.state,
+          '</td>',
+          '<td>',
+            data.description,
+          '</td>',
+        '</tr>'
+      ].join(''));
+      $('form').trigger('reset');
     });
   });
 }
