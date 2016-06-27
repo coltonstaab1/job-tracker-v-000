@@ -22,7 +22,11 @@ var addDataToRow = function(data) {
     $('#jobsTable').append([
         '<tr>',
           '<td>',
+            '<a href="jobs/',
+              job.id,
+            '">',
             job.title,
+            '</a>',
           '</td>',
           '<td>',
             job.city,
