@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
 
   def index
+    @job = Job.new
     @jobs = Job.all
     respond_to do |f|
       f.html { render :index }
