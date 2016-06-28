@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 var addDataToRow = function(data) {
   for (var i = 0; i < data.length; i++) {
-    var job = data[i];
+    var job = new Job(data[i].id, data[i].title, data[i].city, data[i].state, data[i].description, data[i].salary);
     $('#jobsTable').append([
         '<tr>',
           '<td>',
@@ -31,7 +31,7 @@ var addDataToRow = function(data) {
             job.description,
           '</td>',
           '<td>',
-            job.salary,
+            job.formattedSalary(),
           '</td>',
         '</tr>'
       ].join(''));
@@ -69,13 +69,14 @@ var submitForm = function() {
   });
 }
 
-function Job (title, city, state, description) {
+function Job (id, title, city, state, description, salary) {
+  this.id = id;
   this.title = title;
   this.city = city;
   this.state = state;
   this.description = description;
   this.salary = salary;
   this.formattedSalary = function() {
-    return this.salary.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+    return '$' + this.salary.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
   }
 }
