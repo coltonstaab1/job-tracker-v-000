@@ -65,3 +65,14 @@ var submitForm = function() {
     });
   });
 }
+
+function Job (title, city, state, description) {
+  this.title = title;
+  this.city = city;
+  this.state = state;
+  this.description = description;
+  this.salary = salary;
+  this.formattedSalary = function() {
+    return this.salary.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+  }
+}
