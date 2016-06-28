@@ -30,6 +30,9 @@ var addDataToRow = function(data) {
           '<td>',
             job.description,
           '</td>',
+          '<td>',
+            job.salary,
+          '</td>',
         '</tr>'
       ].join(''));
   }
