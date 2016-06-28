@@ -11,14 +11,4 @@ index.html.erb
 </table><br>
 
 <h3>Add new job listing:</h3>
-<%= form_for(@job) do |f| %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %><br>
-  <%= f.label :city %><br>
-  <%= f.text_field :city %><br>
-  <%= f.label :state %><br>
-  <%= f.text_field :state %><br>
-  <%= f.label :description %><br>
-  <%= f.text_field :description %><br>
-  <%= f.submit %>
-<% end %>
+<%= render partial: 'form' %>
