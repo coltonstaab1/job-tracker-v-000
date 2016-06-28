@@ -1,11 +1,3 @@
-User.create(name: "Colton", email: "colton@gmail.com", password: "hellocats")
-User.create(name: "Matthew", email: "matthew@gmail.com", password: "hikitty")
-User.create(name: "Kathy", email: "kathy@gmail.com", password: "iheartdogs")
-
-Industry.create(description: "technology")
-Industry.create(description: "finance")
-Industry.create(description: "apparel")
-
 Company.create(name:"Apple", industry_id: 1)
 Company.create(name:"Google", industry_id: 1)
 Company.create(name:"JP Morgan", industry_id: 2)
