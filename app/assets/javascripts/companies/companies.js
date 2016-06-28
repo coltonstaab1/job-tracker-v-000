@@ -20,7 +20,7 @@ function addCompaniesToPage(companies) {
     '<ul id="',
     company.name,
     '-jobs"></ul>'
-    ].join('');
-  )}
+    ].join(''));
+  }
 )};
 
