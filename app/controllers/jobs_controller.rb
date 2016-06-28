@@ -22,6 +22,12 @@ class JobsController < ApplicationController
     render json: @job, status: 201
   end
 
+  def update
+    @job = Job.find(params[:id])
+    @job.update(job_params)
+    render json: @job, status: 201
+  end
+
   private
     def job_params
       params.require(:job).permit(:title, :city, :state, :description)

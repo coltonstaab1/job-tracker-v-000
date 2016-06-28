@@ -8,6 +8,7 @@ $(document).ready(function() {
     addJobToPage(job);
   });
   editJob();
+  submitForm();
 });
 
 var addJobToPage = function(data) {
@@ -20,5 +21,16 @@ var addJobToPage = function(data) {
 var editJob = function() {
   $('#edit-job-button').click(function() {
     $('#edit-job').show();
+  });
+}
+
+var submitForm = function() {
+  $('form').on('submit', function(event) {
+    event.preventDefault();
+    var values = $(this).serialize();
+    var posting = $.post('/jobs/1', values);
+    posting.done(function(data) {
+      $('form').trigger('reset');
+    });
   });
 }
