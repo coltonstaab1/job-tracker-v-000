@@ -6,6 +6,7 @@ $(document).ready(function() {
   }).done(function(job){
     addJobToPage(job);
   });
+  editJob();
 });
 
 var addJobToPage = function(data) {
@@ -14,3 +15,9 @@ var addJobToPage = function(data) {
   $('#state').html(data.state);
   $('#description').html(data.description);
 } 
+
+var editJob = function() {
+  $('#edit-job').click(function() {
+    alert("Button clicked!")
+  });
+}
