@@ -12,10 +12,11 @@ $(document).ready(function() {
 });
 
 var addJobToPage = function(data) {
-  $('#title').html(data.title);
-  $('#city').html(data.city);
-  $('#state').html(data.state);
-  $('#description').html(data.description);
+  $('#title').append(data.title);
+  $('#city').append(data.city);
+  $('#state').append(data.state);
+  $('#description').append(data.description);
+  $('#salary').append(data.salary)
 } 
 
 var editJob = function() {
@@ -43,4 +44,5 @@ var updatePage = function(data) {
   $("[id*=city]").html(data.city);
   $("[id*=state]").html(data.state);
   $("[id*=description]").html(data.description);
+  $("[id*=salary]").html(data.salary);
 }
