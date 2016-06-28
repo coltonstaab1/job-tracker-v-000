@@ -5,6 +5,7 @@ $(document).ready(function() {
     url: url,
     type: 'GET'
   }).done(function(job){
+    degbugger;
     addJobToPage(job);
   });
   editJob();
@@ -43,4 +44,15 @@ var updatePage = function(data) {
   $("[id*=city]").html(data.city);
   $("[id*=state]").html(data.state);
   $("[id*=description]").html(data.description);
+}
+
+function Job (title, city, state, description) {
+  this.title = title;
+  this.city = city;
+  this.state = state;
+  this.description = description;
+  this.salary = salary;
+  this.formattedSalary = function() {
+    return this.salary.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+  }
 }
