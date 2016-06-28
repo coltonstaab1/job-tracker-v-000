@@ -9,14 +9,18 @@ $(document).ready(function() {
 
 function addCompaniesToPage(companies) {
   companies.forEach( function(company) {
-    $('ul').append(
+    $('#companies-list').append(
     ['<li>',
       '<a href="/companies/',
       company.id,
       '">',
       company.name,
       '</a>',
-    '</li>'].join(''));
-  })
-}
+    '</li>',
+    '<ul id="',
+    company.name,
+    '-jobs"></ul>'
+    ].join('');
+  )}
+)};
 
