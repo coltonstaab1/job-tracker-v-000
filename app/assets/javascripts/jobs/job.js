@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('#edit-job').hide();
   var url = window.location.href + '.json';
   $.ajax({
     url: url,
@@ -17,7 +18,7 @@ var addJobToPage = function(data) {
 } 
 
 var editJob = function() {
-  $('#edit-job').click(function() {
-    alert("Button clicked!")
+  $('#edit-job-button').click(function() {
+    $('#edit-job').show();
   });
 }
