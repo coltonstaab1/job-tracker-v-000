@@ -6,7 +6,7 @@ $(document).ready(function() {
     addDataToRow(jobs);
   });
 
-  submitForm();
+  submitJobsForm();
 });
 
 var addDataToRow = function(data) {
@@ -38,7 +38,7 @@ var addDataToRow = function(data) {
   }
 }
 
-var submitForm = function() {
+var submitJobsForm = function() {
   $('form').on('submit', function(event) {
     event.preventDefault();
     var values = $(this).serialize();

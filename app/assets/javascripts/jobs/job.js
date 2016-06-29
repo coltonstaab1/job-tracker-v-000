@@ -8,7 +8,7 @@ $(document).ready(function() {
     addJobToPage(job);
   });
   editJob();
-  submitForm();
+  submitJobForm();
 });
 
 var addJobToPage = function(data) {
@@ -25,7 +25,7 @@ var editJob = function() {
   });
 }
 
-var submitForm = function() {
+var submitJobForm = function() {
   $('form').on('submit', function(event) {
     event.preventDefault();
     var jobNumber = window.location.pathname.split('/').pop();
