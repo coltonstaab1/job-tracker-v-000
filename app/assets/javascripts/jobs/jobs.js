@@ -3,38 +3,15 @@ $(document).ready(function() {
     url: 'http://localhost:3000/jobs.json',
     type: 'GET'
   }).done(function(jobs){
-    addDataToRow(jobs);
+    initialJobsLoad(jobs);
   });
 
   submitJobsForm();
 });
 
-var addDataToRow = function(data) {
+var initialJobsLoad = function(data) {
   for (var i = 0; i < data.length; i++) {
-    var job = new Job(data[i].id, data[i].title, data[i].city, data[i].state, data[i].description, data[i].salary);
-    $('#jobsTable').append([
-        '<tr>',
-          '<td>',
-            '<a href="jobs/',
-              job.id,
-            '">',
-            job.title,
-            '</a>',
-          '</td>',
-          '<td>',
-            job.city,
-          '</td>',
-          '<td>',
-            job.state,
-          '</td>',
-          '<td>',
-            job.description,
-          '</td>',
-          '<td>',
-            job.formattedSalary(),
-          '</td>',
-        '</tr>'
-      ].join(''));
+    addDataToRow(data[i]);
   }
 }
 
@@ -44,30 +21,38 @@ var submitJobsForm = function() {
     var values = $(this).serialize();
     var posting = $.post('/jobs', values);
     posting.done(function(data) {
-      $('#jobsTable').append([
-        '<tr>',
-          '<td>',
-            '<a href="jobs/',
-              data.id,
-            '">',
-            data.title,
-            '</a>',
-          '</td>',
-          '<td>',
-            data.city,
-          '</td>',
-          '<td>',
-            data.state,
-          '</td>',
-          '<td>',
-            data.description,
-          '</td>',
-        '</tr>'
-      ].join(''));
+      addDataToRow(data);
       $('form').trigger('reset');
     });
   });
 }
+
+var addDataToRow = function(data) {
+  var job = new Job(data.id, data.title, data.city, data.state, data.description, data.salary);
+  $('#jobsTable').append([
+      '<tr>',
+        '<td>',
+          '<a href="jobs/',
+            job.id,
+          '">',
+          job.title,
+          '</a>',
+        '</td>',
+        '<td>',
+          job.city,
+        '</td>',
+        '<td>',
+          job.state,
+        '</td>',
+        '<td>',
+          job.description,
+        '</td>',
+        '<td>',
+          job.formattedSalary(),
+        '</td>',
+      '</tr>'
+    ].join(''));
+  }
 
 function Job (id, title, city, state, description, salary) {
   this.id = id;
