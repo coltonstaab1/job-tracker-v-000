@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 var initialJobsLoad = function(data) {
   for (var i = 0; i < data.length; i++) {
-    addDataToRow(data[i]);
+    addRowToTable(data[i]);
   }
 }
 
@@ -21,16 +21,16 @@ var submitJobsForm = function() {
     var values = $(this).serialize();
     var posting = $.post('/jobs', values);
     posting.done(function(data) {
-      addDataToRow(data);
+      addRowToTable(data);
       $('form').trigger('reset');
     });
   });
 }
 
-var addDataToRow = function(data) {
+var addRowToTable = function(data) {
   var job = new Job(data.id, data.title, data.city, data.state, data.description, data.salary);
   $('#jobsTable').append([
-      '<tr>',
+     '<tr>',
         '<td>',
           '<a href="jobs/',
             job.id,
