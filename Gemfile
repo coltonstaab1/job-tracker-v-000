@@ -31,6 +31,7 @@ gem 'omniauth-facebook'
 gem 'active_model_serializers'
 gem 'faraday'
 gem 'jquery-turbolinks'
+gem 'pry'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

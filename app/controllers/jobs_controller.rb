@@ -2,7 +2,15 @@ class JobsController < ApplicationController
 
   def index
     @job = Job.new
-    @jobs = Job.all
+
+    if params[:company_id].nil?
+      @jobs = Job.all
+      binding.pry
+    else
+      binding.pry
+      @jobs = Job.find_by(company_id: params[:company_id])
+    end
+
     respond_to do |f|
       f.html { render :index }
       f.json { render json: @jobs }
