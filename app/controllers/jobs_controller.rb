@@ -24,6 +24,7 @@ class JobsController < ApplicationController
   end
 
   def create
+    binding.pry
     @job = Job.create(job_params)
     render json: @job, status: 201
   end
@@ -42,9 +43,7 @@ class JobsController < ApplicationController
         :state, 
         :description, 
         :salary,
-        company_attributes: [
-          :id
-        ])
+        :company_id)
     end
 
 end
