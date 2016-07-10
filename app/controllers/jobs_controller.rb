@@ -5,9 +5,7 @@ class JobsController < ApplicationController
 
     if params[:company_id].nil?
       @jobs = Job.all
-      binding.pry
     else
-      binding.pry
       @jobs = Job.find_by(company_id: params[:company_id])
     end
 
@@ -38,7 +36,15 @@ class JobsController < ApplicationController
 
   private
     def job_params
-      params.require(:job).permit(:title, :city, :state, :description, :salary)
+      params.require(:job).permit(
+        :title, 
+        :city, 
+        :state, 
+        :description, 
+        :salary,
+        company_attributes: [
+          :id
+        ])
     end
 
 end
