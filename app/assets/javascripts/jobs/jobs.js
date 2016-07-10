@@ -28,7 +28,7 @@ var submitJobsForm = function() {
 }
 
 var addRowToTable = function(data) {
-  var job = new Job(data.id, data.title, data.city, data.state, data.description, data.salary, data.company.name);
+  var job = new Job(data.id, data.title, data.city, data.state, data.description, data.salary, data.company);
   $('#jobsTable').append([
      '<tr>',
         '<td>',
@@ -39,7 +39,7 @@ var addRowToTable = function(data) {
           '</a>',
         '</td>',
         '<td>',
-          'Cats',
+          job.company.name,
         '</td>',
         '<td>',
           job.city,
