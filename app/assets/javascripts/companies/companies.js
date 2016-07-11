@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$('#companies-index').ready(function() {
     $.ajax({
     url: 'http://localhost:3000/companies.json',
     type: 'GET'
