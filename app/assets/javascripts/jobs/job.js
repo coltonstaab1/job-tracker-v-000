@@ -1,6 +1,5 @@
 $('#job-show').ready(function() {
   $('#edit-job').hide();
-  var url = window.location.href + '.json';
   $.ajax({
     url: url,
     type: 'GET'

@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
 
   def index
+
     @job = Job.new
 
     if params[:company_id].nil?

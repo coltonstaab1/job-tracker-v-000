@@ -1,6 +1,7 @@
 $('#jobs-index').ready(function() {
+  var url = window.location.href + '.json';
   $.ajax({
-    url: 'http://localhost:3000/jobs.json',
+    url: url,
     type: 'GET'
   }).done(function(jobs){
     initialJobsLoad(jobs);
@@ -10,8 +11,13 @@ $('#jobs-index').ready(function() {
 });
 
 var initialJobsLoad = function(data) {
-  for (var i = 0; i < data.length; i++) {
-    addRowToTable(data[i]);
+  debugger;
+  if ( data.length !== undefined ) {
+    for (var i = 0; i < data.length; i++) {
+      addRowToTable(data[i]);
+    }
+  } else {
+    addRowToTable(data);
   }
 }
 
