@@ -14,7 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require jobs/jobs
 //= require jobs/job
 //= require_tree .
 //= require turbolinks
