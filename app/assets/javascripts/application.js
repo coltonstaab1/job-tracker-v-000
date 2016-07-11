@@ -16,6 +16,5 @@
 //= require bootstrap-sprockets
 //= require jobs/jobs
 //= require jobs/job
-//= require companies/companies
 //= require_tree .
 //= require turbolinks
