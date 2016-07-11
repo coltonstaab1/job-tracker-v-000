@@ -11,7 +11,6 @@ $('#jobs-index').ready(function() {
 });
 
 var initialJobsLoad = function(data) {
-  debugger;
   if ( data.length !== undefined ) {
     for (var i = 0; i < data.length; i++) {
       addRowToTable(data[i]);
