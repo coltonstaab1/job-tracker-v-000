@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$('#jobs-index').ready(function() {
   $.ajax({
     url: 'http://localhost:3000/jobs.json',
     type: 'GET'

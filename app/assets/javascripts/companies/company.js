@@ -1,5 +1,4 @@
-$(document).ready(function() {
-  var url = window.location.href + '.json';
+$('#company-show').ready(function() {  var url = window.location.href + '.json';
   $.ajax({
     url: url,
     type: 'GET'
@@ -7,23 +6,6 @@ $(document).ready(function() {
     addCompanyToPage(company);
   });
 });
-
-// function addCompaniesToPage(companies) {
-//   companies.forEach( function(company) {
-//     $('#companies-list').append(
-//     ['<li>',
-//       '<a href="/companies/',
-//       company.id,
-//       '">',
-//       company.name,
-//       '</a>',
-//     '</li>',
-//     '<ul id="',
-//     company.name,
-//     '-jobs"></ul>'
-//     ].join(''));
-//   }
-// )};
 
 function addCompanyToPage(company) {
   $('#name').html(company.name);
